@@ -1,17 +1,15 @@
-import { UseCase } from '@application/use-case';
 import { IHashGateway } from '@domain/shared/gateways/hash-gateway';
 import { IHttpExceptionGateway } from '@domain/shared/gateways/http-exception-gateway';
-import { UserEmailAlreadyUsedException } from '@domain/user/exceptions/user-email-already-used-expcetion';
+import { UserEmailAlreadyUsedException } from '@application/user/exceptions/user-email-already-used-exception';
 import { IUserGateway } from '@domain/user/gateways/user-gateway';
 import { CreateUserResponseMapper } from '@domain/user/mappers/create-user-response-mapper';
 import { CreateUserResponse } from '@domain/user/types/create-user-response';
-import { CreateUserDto } from '../dtos/create-user-dto';
+import { CreateUserDto } from './create-user-dto';
+import { BaseCreateUserUseCase } from './base-create-user-use-case';
 
-export class CreateUserUseCase extends UseCase<
-  CreateUserDto,
-  CreateUserResponse
-> {
+export class CreateUserUseCase extends BaseCreateUserUseCase {
   private mapper: CreateUserResponseMapper;
+
   constructor(
     private readonly userGateway: IUserGateway,
     private readonly hashGateway: IHashGateway,

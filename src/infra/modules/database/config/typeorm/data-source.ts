@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { DataSource, DataSourceOptions } from 'typeorm';
 
-const path = process.env.NODE_ENV === 'database' ? 'src' : 'dist';
+const path = process.env.NODE_ENV === 'database' ? 'src' : 'dist/src';
 
 export const typeOrmConfigConnection: DataSourceOptions = {
   type: 'postgres',

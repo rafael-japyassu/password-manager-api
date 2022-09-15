@@ -1,4 +1,4 @@
-import crypto from 'crypto';
+import * as crypto from 'crypto';
 import { IEncryptGateway } from '@domain/shared/gateways/encrypt-gateway';
 import { PayloadEncrypt } from '@domain/shared/types/payload-encrypt';
 import { Injectable } from '@nestjs/common';

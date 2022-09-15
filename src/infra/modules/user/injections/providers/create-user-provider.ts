@@ -1,4 +1,4 @@
-import { CreateUserUseCase } from '@application/user/useCases/create-user-use-case';
+import { CreateUserUseCase } from '@application/user/useCases/create-user/create-user-use-case';
 import { IHashGateway } from '@domain/shared/gateways/hash-gateway';
 import { IHttpExceptionGateway } from '@domain/shared/gateways/http-exception-gateway';
 import { IUserGateway } from '@domain/user/gateways/user-gateway';

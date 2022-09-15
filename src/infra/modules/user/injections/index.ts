@@ -10,3 +10,10 @@ export const userInjections: Provider[] = [
   },
   createUserProvider,
 ];
+
+export const userInjectionsExport: Provider[] = [
+  {
+    provide: UserConstants.TypeOrmPgUserRepository,
+    useClass: TypeOrmPgUserRepository,
+  },
+];

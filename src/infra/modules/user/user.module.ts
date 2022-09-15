@@ -1,13 +1,13 @@
-import { UserController } from './user.controller';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { SharedModule } from '../shared/shared.module';
+import { CreateUserController } from './controllers/create-user/create-user.controller';
 import { User } from './gateway/typeorm/entities/user';
-import { userInjections } from './injections';
+import { userInjections, userInjectionsExport } from './injections';
 
 @Module({
   imports: [TypeOrmModule.forFeature([User])],
-  controllers: [UserController],
+  controllers: [CreateUserController],
   providers: userInjections,
+  exports: userInjectionsExport,
 })
 export class UserModule {}
