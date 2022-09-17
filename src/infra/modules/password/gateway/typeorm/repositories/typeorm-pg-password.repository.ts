@@ -26,6 +26,10 @@ export class TypeOrmPgPasswordRepository implements IPasswordGateway {
     });
   }
 
+  async findAllAndCount({ where }: FindOne<Password>): Promise<number> {
+    return this.passwordRepository.countBy(where);
+  }
+
   async findOne({ where }: FindOne<Password>): Promise<Password | undefined> {
     return this.passwordRepository.findOne({ where });
   }

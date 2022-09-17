@@ -5,6 +5,7 @@ import { FindAllPaginated } from '../types/find-all-paginated';
 
 export interface IPasswordGateway {
   findAllPaginated(data: FindAllPaginated): Promise<[Password[], number]>;
+  findAllAndCount(data: FindOne<Password>): Promise<number>;
   findOne(data: FindOne<Password>): Promise<Password | undefined>;
   create(data: CreatePassword): Promise<Password>;
   update(password: Password): Promise<Password>;
